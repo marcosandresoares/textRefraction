@@ -28,7 +28,7 @@ function init() {
     camera.position.y = -100;
 
     // images and texture
-    let images = textToTexture('こんにちは');
+    let images = textToTexture('Hola');
     let texture = new THREE.CubeTextureLoader().load(images);
     texture.mapping = THREE.CubeRefractionMapping;
 
@@ -112,7 +112,7 @@ function textToTexture(text) {
 
     // if text is undefined
     if(text === undefined) {
-        text = 'こんにちは';
+        text = 'Hello World';
     }
 
     // canvas
@@ -136,7 +136,15 @@ function textToTexture(text) {
     let repsY = Math.ceil(canvas.height / textHeight);
 
     let idx = 0;
-    //for()
+    for(let y = 0; y < canvas.height; y += textHeight) {
+        for(let x = 0; x < canvas.width; x += textWidth) {
+            ctx.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+            let pseudoX = idx % 2 == 0 ? x : x - (textWidth / 2);
+            ctx.fillText(text, pseudoX, y);
+        }
+
+        idx += 1;
+    }
 
     let tileFromCanvas = (idx) => {
         let imgCanvas = document.createElement('canvas');
@@ -151,7 +159,7 @@ function textToTexture(text) {
     let images = [];
     images.push(tileFromCanvas(0));
     images.push(tileFromCanvas(1));
-    images.push(tileFromCanvas(4));
+    images.push(tileFromCanvas(4)); 
     images.push(tileFromCanvas(4));
     images.push(tileFromCanvas(2));
     images.push(tileFromCanvas(3));
