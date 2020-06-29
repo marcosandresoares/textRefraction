@@ -13,8 +13,8 @@ body{
 }
 
 .background {
-    // background-image: ; // gif
-    background-image: url("https://res.cloudinary.com/losrodriguez/image/upload/v1591942826/bg_nr9p2v.gif");
+    // background-image
+    background-image: url(/assets/tokyo-bg-tinted.jpg);
     -webkit-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
@@ -30,7 +30,7 @@ body{
 input {
     position: absolute;
     left: 50%;
-    bottom: 10px;
+    bottom: 75px;
     width: 300px;
     transform: translate(-50%, 0%);
     border: 2px solid #ffffff;

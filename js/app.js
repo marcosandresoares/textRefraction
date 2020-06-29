@@ -7,11 +7,11 @@ let mouseX = 0;
 let mouseY = 0;
 
 let colors = [
-    "#D98E04",
-    "#F2E205",
-    "#7F25D9",
-    "#5C12A6",
-    "#2F0459"
+    "#1B98A6",
+    "#F2BB13",
+    "#F29F05",
+    "#F2522E",
+    "#BF2315"
 ];
 
 // Init function
@@ -28,7 +28,7 @@ function init() {
     camera.position.y = -100;
 
     // images and texture
-    let images = textToTexture('Hola');
+    let images = textToTexture('こんにちは');
     let texture = new THREE.CubeTextureLoader().load(images);
     texture.mapping = THREE.CubeRefractionMapping;
 
@@ -112,7 +112,7 @@ function textToTexture(text) {
 
     // if text is undefined
     if(text === undefined) {
-        text = 'Hello World';
+        text = 'こんにちは';
     }
 
     // canvas
